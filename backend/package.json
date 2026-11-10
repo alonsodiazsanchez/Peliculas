@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "build": "prisma generate",
     "start": "node src/app.js",
     "start:prod": "prisma migrate deploy && node src/app.js"
   },
@@ -12,7 +13,7 @@
     "cors": "^2.8.6",
     "dotenv": "^16.6.1",
     "express": "^5.2.1",
-    "prisma": "^8.0.0-rc.33"
+    "prisma": "^7.10.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
