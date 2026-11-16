@@ -5,7 +5,7 @@
   "scripts": {
     "build": "prisma generate",
     "start": "node src/app.js",
-    "start:prod": "prisma migrate deploy && node src/app.js"
+    "start:prod": "prisma migrate deploy && node prisma/seed.js && node src/app.js"
   },
   "dependencies": {
     "@prisma/adapter-better-sqlite3": "^7.10.0",
