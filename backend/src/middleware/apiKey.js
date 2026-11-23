@@ -5,7 +5,7 @@ export function comprobarApiKey(req, res, next) {
   
   
  
-  if (apiKey !== "clase-frameworks-2026") {
+  if (apiKey !== process.env.API_KEY) {
     return res.status(401).json({
       error: "Clave de API incorrecta o ausente"
     });

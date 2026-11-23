@@ -47,7 +47,7 @@ export async function crearPelicula(req, res) {
     });
     res.status(201).json(pelicula);
   } catch (error) {
-    res.status(500).json({ error: "No se pudo crear la película" });
+    console.error(error).json({ error: "No se pudo crear la película" });
   }
 }
 
@@ -82,8 +82,8 @@ export async function actualizarPelicula(req, res) {
     }
 
     if (director !== undefined) {
-      if (typeof director !== "string" || director.trim().length < 2) {
-        return res.status(400).json({ error: "El director debe tener al menos 2 caracteres" });
+      if (typeof director !== "string" || director.trim().length < 3) {
+        return res.status(400).json({ error: "El director debe tener al menos 3 caracteres" });
       }
       datos.director = director.trim();
     }
@@ -94,7 +94,7 @@ export async function actualizarPelicula(req, res) {
     });
     res.json(pelicula);
   } catch (error) {
-    res.status(500).json({ error: "No se pudo actualizar la película" });
+    console.error(error).json({ error: "No se pudo actualizar la película" });
   }
 }
 
@@ -119,6 +119,6 @@ export async function eliminarPelicula(req, res) {
     });
     res.status(204).send();
   } catch (error) {
-    res.status(500).json({ error: "No se pudo eliminar la película" });
+    console.error(error).json({ error: "No se pudo eliminar la película" });
   }
 }

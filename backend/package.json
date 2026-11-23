@@ -1,11 +1,12 @@
 {
-  "name": "Bloque1",
+  "name": "cine-backend",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "dev": "node --watch src/app.js",
     "build": "prisma generate",
     "start": "node src/app.js",
-    "start:prod": "prisma migrate deploy && node prisma/seed.js && node src/app.js"
+    "start:prod": "prisma migrate deploy && node src/app.js"
   },
   "dependencies": {
     "@prisma/adapter-better-sqlite3": "^7.10.0",
@@ -18,5 +19,10 @@
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^24.19.0"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "prisma@7.10.1": true,
+    "@prisma/engines@7.10.1": true
   }
 }
