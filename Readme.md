@@ -19,6 +19,6 @@ Express, Prisma, SQLite · React, Vite · Git, GitHub, Render
 Ver backend/.env.example y frontend/.env.example (sin valores secretos).
  
 ## Despliegue
-- Frontend: https://onrender.com
-- API:      https://onrender.com
+- Frontend: https://pelicula-web.onrender.com
+- Backend:      [peliculas-e8oh.onrender.com](https://peliculas-e8oh.onrender.com)
 - Nota: la base de datos SQLite del plan gratuito es efímera y los cambios en las reservas se reiniciarán con el servidor.
