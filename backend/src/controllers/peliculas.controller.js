@@ -8,6 +8,7 @@ export async function listarPeliculas(req, res) {
     });
     res.json(peliculas);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "No se pudieron obtener las películas" });
   }
 }
@@ -29,6 +30,7 @@ export async function obtenerPelicula(req, res) {
     }
     res.json(pelicula);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "No se pudo obtener la película" });
   }
 }
@@ -47,7 +49,8 @@ export async function crearPelicula(req, res) {
     });
     res.status(201).json(pelicula);
   } catch (error) {
-    console.error(error).json({ error: "No se pudo crear la película" });
+    console.error(error);
+    res.status(500).json({ error: "No se pudo crear la película" });
   }
 }
 
@@ -94,7 +97,8 @@ export async function actualizarPelicula(req, res) {
     });
     res.json(pelicula);
   } catch (error) {
-    console.error(error).json({ error: "No se pudo actualizar la película" });
+    console.error(error);
+    res.status(500).json({ error: "No se pudo actualizar la película" });
   }
 }
 
@@ -119,6 +123,7 @@ export async function eliminarPelicula(req, res) {
     });
     res.status(204).send();
   } catch (error) {
-    console.error(error).json({ error: "No se pudo eliminar la película" });
+    console.error(error);
+    res.status(500).json({ error: "No se pudo eliminar la película" });
   }
 }
